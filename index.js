@@ -6,8 +6,8 @@ const dir = './img/';
 const files = readdirSync(dir)
 
 files.forEach(file => {
-    if (path.parse(file).ext !== 'webp') {
-        sharp(`${dir}${file}`).resize(810, 1080).toFile(`${dir}${path.parse(file).name}.webp`).then( res => {
+    if (path.parse(file).ext !== 'png') {
+        sharp(`${dir}${file}`).resize(240, 240).toFile(`${dir}${path.parse(file).name}.png`).then( res => {
             console.log(`${file} converted succeffully.`)
             rmSync(`${dir}${file}`)
 
